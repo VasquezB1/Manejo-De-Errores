@@ -12,5 +12,6 @@ package ec.edu.ups.excepciones;
 public class ValidacionDeCedula extends Exception{
     public ValidacionDeCedula(){
         super("La cédula ingresa no es valida");
+        
     }
 }

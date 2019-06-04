@@ -10,6 +10,7 @@ package ec.edu.ups.excepciones;
  * @author Byron PC
  */
 public class Persona {
+
     private String cedula;
     private String nombre;
     private String apellido;
@@ -17,35 +18,36 @@ public class Persona {
 
     public Persona() {
     }
-
-    public Persona(String cedula, String nombre, String apellido, int edad) {
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-    }
+   
 
     public String getCedula() {
         return cedula;
     }
 
     public void setCedula(String cedula) throws ValidacionDeCedula {
-        if(cedula.length()==10){
-            int pos = Integer.parseInt(cedula.substring(2,3));
-            if(pos<6){
-                int [] Validacion = {
-                    2,1,2,1,2,1,2,1,2};
-                int cedu = Integer.parseInt(cedula.substring(9,10));
-                int a =0;
+        if (cedula.length() == 10) {
+            int pos = Integer.parseInt(cedula.substring(2, 3));
+            if (pos <= 6) {
+                int[] Validacion = {2, 1, 2, 1, 2, 1, 2, 1, 2};
+                int cedu = Integer.parseInt(cedula.substring(9, 10));
+                int a = 0;
                 int d = 0;
-                for (int i =0;i<(cedula.length()-1);i++){
-                    d = Integer.parseInt(cedula.substring(i,i+1))*Validacion[i];
-                    a = ((d%10)+(d/10));                    
+                for (int i = 0; i < (cedula.length() - 1); i++) {
+                    d = Integer.parseInt(cedula.substring(i, i + 1)) * Validacion[i];
+                    a += ((d % 10) + (d / 10));
                 }
-                if(( a % 10 ==0) && (a%10 == cedu)){
-                        this.cedula = cedula;
-            } 
+                if ((a % 10 == 0) && (a % 10 == cedu)) {
+                    this.cedula = cedula;
+                } else if ((10 - (a % 10)) == cedu) {
+                    this.cedula = cedula;
+                } else {
+                    throw new ValidacionDeCedula();
+                }
+            } else {
+                throw new ValidacionDeCedula();
             }
+        } else {
+            throw new ValidacionDeCedula();
         }
 
     }
@@ -73,7 +75,5 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    
-    
-    
+
 }
