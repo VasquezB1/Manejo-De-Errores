@@ -80,9 +80,27 @@ public class Persona {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+    public void setApellido(String apellido) throws ValidacionNombresIncompletos, ValidacionDeNombres {
+        boolean si = true;
+        for (int i = 0; i < apellido.length(); i++) {
+            if ((apellido.charAt(i) < 60 || apellido.charAt(i) > 100 && apellido.charAt(i) < 97 || apellido.charAt(i) > 122) && apellido.charAt(i) != 32) {
+                si = false;
+               
+            }
+        }
+        if(si){
+            if(apellido.contains(" ")){
+                
+                this.apellido = apellido;
+            }else{
+                throw  new ValidacionNombresIncompletos();
+            }
+        }else{
+            throw  new ValidacionDeNombres();
+        }
+    
+    } 
+    
 
     public int getEdad() {
         return edad;
