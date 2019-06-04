@@ -106,11 +106,11 @@ public class Persona {
         return edad;
     }
 
-    public void setEdad(int edad) throws Exception {
+    public void setEdad(int edad) throws LongitudFueraDeRangoException {
           if(edad >= 20 && edad<=35){
             this.edad = edad;
         }else{
-            throw new Exception("La edad debe estar comprendida entre 20 y 35 años");
+            throw new LongitudFueraDeRangoException("La edad debe estar comprendida entre 20 y 35 años");
         }
         
     }

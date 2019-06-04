@@ -11,7 +11,7 @@ package ec.edu.ups.excepciones;
  */
 public class LongitudFueraDeRangoException extends Exception{
 
-    public LongitudFueraDeRangoException() {
+    public LongitudFueraDeRangoException(String la_edad_debe_estar_comprendida_entre_20_y) {
         super("La edad no es la correcta");
     }
     

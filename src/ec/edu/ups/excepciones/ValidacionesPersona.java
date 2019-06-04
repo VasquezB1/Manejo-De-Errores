@@ -193,24 +193,16 @@ private Persona persona;
         persona = new Persona();
         try{
             persona.setCedula(txtcedula.getText());
-        }catch(Exception e){
-            JOptionPane.showConfirmDialog(this, "Su Error es: \n"+e.toString(),"",JOptionPane.WARNING_MESSAGE);
-        }
-        try{
             persona.setNombre(txtnombres.getText());
-        }catch(Exception e1){
-            JOptionPane.showConfirmDialog(this, "Su Error es: \n"+e1.toString(),"",JOptionPane.WARNING_MESSAGE);
-        }
-        try{
             persona.setApellido(txtapellido.getText());
-        }catch(Exception e2){
-            JOptionPane.showConfirmDialog(this, "Su Error es: \n"+e2.toString(),"",JOptionPane.WARNING_MESSAGE);
-        }
-        try{
             persona.setEdad(Integer.parseInt(txtedad.getText()));
-        }catch(Exception e3){
-            JOptionPane.showConfirmDialog(this, "Su Error es: \n"+e3.toString(),"",JOptionPane.WARNING_MESSAGE);
-        }
+        }catch(ValidacionDeCedula e4){
+            JOptionPane.showConfirmDialog(this, "Su Error es: \n"+e4.toString(),"",JOptionPane.WARNING_MESSAGE); 
+        }catch(ValidacionDeNombres | ValidacionNombresIncompletos e1){
+            JOptionPane.showConfirmDialog(this, "Su Error es: \n"+e1.toString(),"",JOptionPane.WARNING_MESSAGE);
+        }catch(LongitudFueraDeRangoException e){
+             JOptionPane.showConfirmDialog(this, "Su Error es: \n"+e.toString(),"",JOptionPane.WARNING_MESSAGE);
+        }        
         if (persona.getNombre() != null && persona.getApellido() != null && persona.getCedula() != null && persona.getEdad() != 0) {
             JOptionPane.showConfirmDialog(this, "Persona creada exitosamente", "", JOptionPane.INFORMATION_MESSAGE);
             System.out.println("*****************************************************");
