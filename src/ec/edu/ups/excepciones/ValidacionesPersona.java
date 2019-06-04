@@ -83,6 +83,11 @@ private Persona persona;
 
         btncanclear.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btncanclear.setText("Cancelar");
+        btncanclear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncanclearActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombres", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(102, 102, 102))); // NOI18N
 
@@ -208,6 +213,7 @@ private Persona persona;
         }
         if (persona.getNombre() != null && persona.getApellido() != null && persona.getCedula() != null && persona.getEdad() != 0) {
             JOptionPane.showConfirmDialog(this, "Persona creada exitosamente", "", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("*****************************************************");
             txtapellido.setText("");
             txtcedula.setText("");
             txtedad.setText("");
@@ -217,7 +223,13 @@ private Persona persona;
         System.out.println(persona.getNombre());
         System.out.println(persona.getApellido());
         System.out.println(persona.getEdad());
+        System.out.println("*****************************************************");
     }//GEN-LAST:event_btnvalidarActionPerformed
+
+    private void btncanclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncanclearActionPerformed
+        // TODO add your handling code here:
+       System.exit(0);
+    }//GEN-LAST:event_btncanclearActionPerformed
 
     /**
      * @param args the command line arguments
