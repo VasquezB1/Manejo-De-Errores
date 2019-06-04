@@ -18,7 +18,6 @@ public class Persona {
 
     public Persona() {
     }
-   
 
     public String getCedula() {
         return cedula;
@@ -56,8 +55,25 @@ public class Persona {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombre) throws ValidacionNombresIncompletos, ValidacionDeNombres {
+        boolean si = true;
+        for (int i = 0; i < nombre.length(); i++) {
+            if ((nombre.charAt(i) < 60 || nombre.charAt(i) > 100 && nombre.charAt(i) < 97 || nombre.charAt(i) > 122) && nombre.charAt(i) != 32) {
+                si = false;
+               
+            }
+        }
+        if(si){
+            if(nombre.contains(" ")){
+                
+                this.nombre = nombre;
+            }else{
+                throw  new ValidacionNombresIncompletos();
+            }
+        }else{
+            throw  new ValidacionDeNombres();
+        }
+        
     }
 
     public String getApellido() {

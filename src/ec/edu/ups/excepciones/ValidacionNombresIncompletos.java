@@ -9,9 +9,9 @@ package ec.edu.ups.excepciones;
  *
  * @author Byron PC
  */
-public class NombresIncompletos extends Exception {
+public class ValidacionNombresIncompletos extends Exception {
     
-    public NombresIncompletos(){        
+    public ValidacionNombresIncompletos(){        
         super("Sus nombres no se encuentran completos\n"+"Por favor Verificar");        
     }
 }
