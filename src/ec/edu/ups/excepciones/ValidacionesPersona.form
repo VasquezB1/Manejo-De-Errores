@@ -140,7 +140,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="C&#xe9;dula">
+            <TitledBorder title="Nombres">
               <Font PropertyName="font" name="Tahoma" size="14" style="1"/>
               <Color PropertyName="color" blue="66" green="66" red="66" type="rgb"/>
             </TitledBorder>
@@ -178,7 +178,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="C&#xe9;dula">
+            <TitledBorder title="Apellidos">
               <Font PropertyName="font" name="Tahoma" size="14" style="1"/>
               <Color PropertyName="color" blue="66" green="66" red="66" type="rgb"/>
             </TitledBorder>
@@ -216,7 +216,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="C&#xe9;dula">
+            <TitledBorder title="Edad">
               <Font PropertyName="font" name="Tahoma" size="14" style="1"/>
               <Color PropertyName="color" blue="66" green="66" red="66" type="rgb"/>
             </TitledBorder>
